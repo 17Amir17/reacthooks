@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.autocompletebox {
+  width: 50%;
+  height: 10em;
+  margin: auto;
+  margin-top: 5em;
+}
+.toggle {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  width: auto;
+  display: flex;
+  justify-content: center;
+  /* height: 3em; */
+  align-items: center;
+  border-style: solid;
+}
+.toggle:hover {
+  cursor: pointer;
+}
+.show {
+  transform: rotate(180deg); /* Equal to rotateZ(45deg) */
+  left: 0;
+  bottom: 0;
+}
+.inputbox {
+  height: 3em;
+  width: 100%;
+}
+.dropdown {
+  max-height: 10em;
+  overflow: auto;
+}
+.input {
+  display: flex;
+  width: 100%;
+}
+.option {
+  cursor: pointer;
+  height: 2em;
+  border-style: solid;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}

@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import AutoCompleteBox from './AutoCompleteBox';
+import './styles/index.css';
+import AutoCompleteBox from './Components/AutoCompleteBox';
+import CountryContextProvider from './Contexts/CountryContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AutoCompleteBox />
+    <CountryContextProvider>
+      <AutoCompleteBox />
+    </CountryContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
