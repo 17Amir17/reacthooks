@@ -1,16 +1,15 @@
 import ToggleButton from './ToggleButton';
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import OptionsDropdown from './OptionsDropdown';
 import Countries from '../data/Countries';
 import { CountryContext } from '../Contexts/CountryContext';
 import ClearButton from './ClearButton';
+import useStateAndRef from '../Hooks/useStateAndRef';
 
 function AutoCompleteBox() {
-  const dropdownRef = useRef(null);
-  const inputRef = useRef(null);
   const context = useContext(CountryContext);
-  const [countries, setCountries] = useState(Countries);
-  const [hide, setHide] = useState(
+  const [countries, setCountries, dropdownRef] = useStateAndRef(Countries);
+  const [hide, setHide, inputRef] = useStateAndRef(
     (dropdownRef.current && dropdownRef.current.hidden) || false
   );
   const [country, setCountry] = useState(null);
