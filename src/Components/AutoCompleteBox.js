@@ -13,6 +13,10 @@ function AutoCompleteBox() {
     (dropdownRef.current && dropdownRef.current.hidden) || false
   );
   const [country, setCountry] = useState(null);
+  const [inputBorder, setInputBorder] = useState({
+    color: 'initial',
+    width: 'thin',
+  });
 
   const inputChanged = (e) => {
     const input = e.target.value.toLowerCase();
@@ -30,6 +34,7 @@ function AutoCompleteBox() {
 
   useEffect(() => {
     dropdownRef.current.hidden = true;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -43,12 +48,24 @@ function AutoCompleteBox() {
 
   return (
     <div className="autocompletebox">
-      <div className="input">
+      <div
+        className="input"
+        style={{
+          borderColor: inputBorder.color,
+          borderWidth: inputBorder.width,
+        }}
+      >
         <input
           ref={inputRef}
           className="inputbox"
           onChange={inputChanged}
           type="text"
+          onFocus={() => {
+            setInputBorder({ color: 'blue', width: 'medium' });
+          }}
+          onBlur={() => {
+            setInputBorder({ color: 'initial', width: 'thin' });
+          }}
         ></input>
         <ClearButton reference={inputRef} update={inputChanged} />
         <ToggleButton reference={dropdownRef} hide={hide} setHide={setHide} />

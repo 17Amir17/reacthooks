@@ -20,12 +20,16 @@ body {
   width: auto;
   display: flex;
   justify-content: center;
-  /* height: 3em; */
+  margin-right: 0.5em;
   align-items: center;
-  border-style: solid;
+  transition: background-color 1s ease;
+  width: 2em;
+  height: 2em;
+  border-radius: 1em;
 }
 .toggle:hover {
   cursor: pointer;
+  background-color: grey;
 }
 .show {
   transform: rotate(180deg); /* Equal to rotateZ(45deg) */
@@ -43,13 +47,25 @@ body {
 .input {
   display: flex;
   width: 100%;
+  border-style: solid;
+  border-width: thin;
+  display: flex;
+  align-items: center;
 }
 .option {
   cursor: pointer;
-  height: 2em;
-  border-style: solid;
+  min-height: 2em;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 ul {
   list-style-type: none;
   padding: 0;
+}
+.inputbox {
+  border-style: none;
+  outline: none;
+  border-radius: 1em;
+  border-width: thin;
 }

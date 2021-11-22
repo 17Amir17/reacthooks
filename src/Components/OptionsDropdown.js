@@ -31,9 +31,14 @@ function Option(props) {
       data-country={props.country}
       data-code={props.code}
     >
-      {props.country} - {props.code}
+      <img src={getFlag(props.code)} alt={'🏴‍☠️'}></img> {props.country} -{' '}
+      {props.code}
     </li>
   );
+}
+
+function getFlag(countryCode) {
+  return 'https://flagcdn.com/w40/' + countryCode.toLowerCase() + '.png';
 }
 
 export default OptionsDropdown;
