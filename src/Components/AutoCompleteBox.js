@@ -6,7 +6,7 @@ import { CountryContext } from '../Contexts/CountryContext';
 import ClearButton from './ClearButton';
 import useStateAndRef from '../Hooks/useStateAndRef';
 
-function AutoCompleteBox() {
+function AutoCompleteBox(props) {
   const context = useContext(CountryContext);
   const [countries, setCountries, dropdownRef] = useStateAndRef(Countries);
   const [hide, setHide, inputRef] = useStateAndRef(

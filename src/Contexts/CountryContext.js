@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 
 export const CountryContext = createContext();
 
-class CountryContextProvider extends React.Component {
+export default class CountryContextProvider extends React.Component {
   state = {
     country: null,
   };
@@ -21,5 +21,3 @@ class CountryContextProvider extends React.Component {
     );
   }
 }
-
-export default CountryContextProvider;
